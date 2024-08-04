@@ -16,7 +16,12 @@ const allCategories = {
   560: { category: "Backend Development", className: "backend" },
 };
 
-
+const forumCategory = (id) => {
+  let selectedCategory = {};
+  if(allCategories.hasOwnProperty(id))  {
+    
+  }
+};
 
 const timeAgo = (time) => {
   const currentTime = new Date();
@@ -73,8 +78,7 @@ const showLatestPosts = (data) => {
       views,
       posts_count,
       slug,
-      posters,
-      category_id,
+      posters,_id,
       bumped_at,
     } = item;
 
