@@ -25,8 +25,14 @@ const forumCategory = (id) => {
     selectedCategory.className = className;
     selectedCategory.category = category;
   } else {
-
+    selectedCategory.className = "general";
+    selectedCategory.category = "General";
+    selectedCategory.id = 1;
   }
+  const url = `${forumCategoryUrl}${selectedCategory.className}/${id}`;
+  const linkText = selectedCategory.category;
+  const linkClass = `category ${selectedCategory.className}`;
+  return `<a href="${url}" ></a>`;
 };
 
 const timeAgo = (time) => {
@@ -84,7 +90,8 @@ const showLatestPosts = (data) => {
       views,
       posts_count,
       slug,
-      posters,_id,
+      posters,
+      category_id,
       bumped_at,
     } = item;
 
